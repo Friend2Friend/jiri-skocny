@@ -1,0 +1,40 @@
+// mixins
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+}
+
+@mixin transition {
+    transition: .2s ease;
+}
+
+@mixin heading {
+    font-size: em(40);
+    font-weight: bold;
+    padding-bottom: em(10);
+    text-align: center;
+}
+
+@mixin paragraph {
+    font-size: em(20);
+    line-height: em(26);
+    text-align: center;
+}
+
+// border radius mixin
+
+@mixin rounded ($radius:6px){
+    @if($enable-rounded){
+        border-radius: $radius;
+    }
+}
+
+// functions
+
+@function em($content, $size:16){
+    @return ($content/$size)*1em;
+}

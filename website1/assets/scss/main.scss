@@ -1,0 +1,98 @@
+@import "typography";
+@import "variables";
+@import "mixins";
+@import "colors";
+@import "header";
+@import "main-section";
+@import "pre-footer";
+@import "footer";
+
+body {
+    position: relative;
+    font-family: $font;
+    background-color: $bg-color;
+    color: $color;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+// basic varibales
+
+a,button, input {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: em(1600);
+    margin: 0 auto;
+    position: relative;
+
+    @media(max-width: em(1600)){
+        padding: 0 em(20);
+    }
+}
+
+.btn {
+    display: block;
+    padding: em(10) em(18);
+    font-size: em(20);
+    background-color: $btn-color;
+    color: $bg-color;
+    cursor: pointer;
+    @include transition;
+
+    &:hover {
+        background-color: darken($btn-color, 15%);
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+//up.up.arrow
+
+.scroll-to-top {
+    position: fixed;
+    bottom: em(20);
+    right: em(20);
+    width: em(20);
+    height: em(20);
+    font-size: em(30);
+    text-align: center;
+    line-height: em(20);
+    color: $color;
+    display: none;
+
+}
+
+//overlay-custom
+
+.overlay-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: .6);
+    z-index: 1;
+}
