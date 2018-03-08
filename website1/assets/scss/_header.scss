@@ -15,6 +15,7 @@ header  {
         top: em(6);
         left: em(8);
         font-size: em(35);
+        color: $bg-color;
     }
 
     // main hero
@@ -41,6 +42,7 @@ header  {
         h1 {
             font-size: em(40);
             padding-bottom: em(20);
+            color: $bg-color;
 
             @media(max-width: em(900)){
                 display: none;
@@ -142,7 +144,7 @@ header  {
             right: 0;
             top: 1;
             height: em(3);
-            background-color: $color;
+            background-color: $bg-color;
         }
 
         &:nth-child(1):after{top: em(0);}
@@ -162,7 +164,7 @@ header  {
             right: 0;
             top: em(8);
             height: em(3);
-            background-color: $color;
+            background-color: $bg-color;
         }
 
         &:nth-child(1):after{transform: rotate(45deg);}
@@ -193,6 +195,7 @@ li {
         position: relative;
         font-size: em(18);
         text-transform: capitalize;
+        color: $bg-color;
 
         &:after {
             position: absolute;
@@ -200,7 +203,7 @@ li {
             left: 0;
             right: 0;
             bottom: em(-5);
-            background-color: $color;
+            background-color: $bg-color;
             height: em(1);
             transform-origin: right;
             transform: scaleX(0);
@@ -246,6 +249,7 @@ li {
         text-transform: capitalize;
         display: block;
         position: relative;
+        color: $bg-color;
 
         &:after {
             content: "";
@@ -254,7 +258,7 @@ li {
             right: em(-20);
             width: em(6);
             height: em(6);
-            background-color: $color;
+            background-color: $bg-color;
             border-radius: 50%;
             transform: scale(0);
             @include transition;
@@ -267,7 +271,7 @@ li {
             left: em(-20);
             width: em(6);
             height: em(6);
-            background-color: $color;
+            background-color: $bg-color;
             border-radius: 50%;
             transform: scale(0);
             @include transition;
@@ -321,7 +325,7 @@ li {
             size: cover;
             position: 80%;
         }
-        z-index: 9999;
+        z-index: 9990;
     }
 
     .post-hero {
@@ -351,7 +355,30 @@ li {
             size: cover;
             position: 80%;
         }
-        z-index: 9999;
+        z-index: 9990;
+    }
+
+    .button-container {
+        max-width: em(400);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: em(10);
+
+        @media(max-width: em(600)){
+            grid-template-columns: 1fr;
+        }
+
+        a {
+            @include rounded;
+        }
+    }
+
+    .post-hero {
+
+        p {
+            padding-bottom: em(40);
+        }
     }
 }
 
@@ -361,13 +388,14 @@ li {
     padding: em(200) 0;
     text-align: center;
     position: relative;
+    color: $bg-color;
 
     .container {
         z-index: 2;
     }
 
     h1,p {
-        text-shadow: em(0) em(1) em(2) $bg-color;
+        text-shadow: em(0) em(1) em(2) $color;
     }
 
     h1 {
@@ -395,21 +423,18 @@ li {
 
 .post-hero {
     position: relative;
-    padding: em(40) 0;
+    padding: em(60) 0;
     max-width: em(1000);
     margin: 0 auto;
     line-height: em(26);
     font-size: em(18);
     text-align: center;
+    color: $bg-color;
 
     overflow: auto;
 
     h1 {
         font-size: em(30);
         padding-bottom: em(15);
-    }
-
-    p {
-        padding-bottom: em(50);
     }
 }

@@ -1,5 +1,6 @@
 footer {
-    background-color: lighten($bg-color, 15%);
+    background-color: lighten($color, 15%);
+    color: $bg-color;
 }
 
 #footer-section {
@@ -33,7 +34,7 @@ footer {
     }
 
     a:hover {
-        color: darken($color, 50%);
+        color: darken($bg-color, 50%);
     }
 
     @media(max-width:em(700)){
@@ -69,7 +70,7 @@ footer {
 // post-footer
 
 #post-footer {
-    background-color: $bg-color;
+    background-color: $color;
     padding: em(25) 0;
     text-align: center;
 

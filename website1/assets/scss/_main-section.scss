@@ -1,7 +1,10 @@
 #main-wrapper {
     text-align: center;
-    background-color: $bg-color-sections;
     padding: em(60) 0;
+    
+    h1, p {
+        color: $color;
+    }
 }
 
 #box-grid {
@@ -128,11 +131,7 @@
         text-transform: uppercase;
         font-weight: bold;
         text-align: center;
-    }
-
-    @media(max-width: em(450)) {
-        padding-right: 0;
-        padding-left: 0;
+        color: $bg-color;
     }
 }
 
@@ -142,11 +141,11 @@
     grid-gap: em(10);
 
     .gallery-image {
-        height: em(200);
+        height: auto;
         position: relative;
 
         @media(max-width: em(450)){
-            height: em(200);
+            height: auto;
         }
         
         img {
@@ -166,7 +165,8 @@
             height: 100%;
             width: 100%;
             display: none;
-            background-color: rgba($bg-color, .8);
+            background-color: rgba($color, .8);
+            color: $bg-color;
             font-size: em(30);
             font-weight: bold;
             text-transform: uppercase;
@@ -198,7 +198,8 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba($bg-color, .95);
+    background-color: rgba($color, .95);
+    color: $bg-color;
     display: none;
     z-index: 9995;
 
@@ -236,9 +237,6 @@
         height: em(500);
         width: em(800);
 
-        img {
-
-        }
 
         @media(max-width: em(970)){
             height: em(300);
@@ -266,6 +264,7 @@
 
     h1 {
         @include heading;
+        line-height: em(20);
     }
 
     p {
@@ -307,8 +306,12 @@
         width: 100%;
         line-height: em(30);
         padding: em(5) em(10);
-        color: $bg-color;
+        border: em(1) solid lighten($color, 80%);
         @include rounded(em(4));
+
+        &:focus {
+            outline-color: $btn-color;
+        }
     }
 
     #message-form {
@@ -316,6 +319,8 @@
     }
 
     .submit {
+        margin: 0 auto;
+        width: em(200);
         @include rounded(em(4));
         font: {
             weight: bold;

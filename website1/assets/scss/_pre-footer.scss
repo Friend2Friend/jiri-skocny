@@ -31,6 +31,7 @@
 
   #open-hours {
     background-color: #000;
+    color: $bg-color;
     height: 100%;
     box-sizing: border-box;
 
@@ -49,10 +50,10 @@
       font-size: em(20);
 
       tr {
-        border-bottom: em(1) solid $color;
+        border-bottom: em(1) solid $bg-color;
 
         &:first-child {
-          border-top: em(1) solid $color;
+          border-top: em(1) solid $bg-color;
         }
       }
 

@@ -56,9 +56,10 @@ li {
     padding: em(10) em(18);
     font-size: em(20);
     background-color: $btn-color;
-    color: $bg-color;
+    color: $color;
     cursor: pointer;
     @include transition;
+    @include rounded;
 
     &:hover {
         background-color: darken($btn-color, 15%);
@@ -81,6 +82,8 @@ li {
     text-align: center;
     line-height: em(20);
     color: $color;
+    background-color: $btn-color;
+    @include rounded;
     display: none;
 
 }
