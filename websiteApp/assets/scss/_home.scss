@@ -1,0 +1,151 @@
+#info {
+  text-align: center;
+
+  h1 {
+    font-size: 40px;
+    padding: em(20);
+  }
+
+  &>p {
+    margin: 0 auto;
+    max-width: 800px;
+    padding-bottom: em(40);
+    line-height: 24px;
+  }
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: em(100) 0;
+
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 200px;
+    margin-right: em(15);
+    padding: em(10);
+    background-color: $color;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 0px lighten($color-dark,35%);
+
+    @include transition;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      padding-bottom: 20px;
+      line-height: 22px;;
+    }
+
+    @media(max-width: 1024px){
+      width: 50%;
+      margin-right: 0; 
+      margin-bottom: 15px;
+    }
+
+    @media(max-width: 800px){
+      width: 90%;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 10px 0px $color-dark;
+    }
+  }
+
+  @media(max-width: 1024px){
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+// carousel section
+
+.carousel-section {
+  padding-bottom: 80px;
+}
+
+#carousel-wrapper {
+  position: relative;
+  padding: 0;
+
+  #left-arrow {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    font-size: 40px;
+    transform: translate(-50%, -50%);
+  }
+
+  #right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    font-size: 40px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.carousel {
+  width: 600%;
+  height: 500px;
+  margin-left: -100%;
+}
+
+.carousel-box {
+  width: calc(100%/6);
+  float: left;
+  height: 100%;
+
+  &:nth-of-type(1){background: darkcyan;}
+  &:nth-of-type(2){background: darkgoldenrod;}
+  &:nth-of-type(3){background: brown;}
+  &:nth-of-type(4){background: crimson;}
+}
+
+// sign in section
+
+#sign-in {
+  position: relative;
+
+  .overlay {
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000 !important;
+
+    @include absolutePosition;
+    @include overlay;
+  }
+
+  .sign-in-modal {
+    position: relative;
+    width: 400px;
+    background-color: $color-bg;
+    padding: em(25);
+    @include rounded(6);
+
+    p {
+      margin-bottom: 15px;
+
+      a {
+        font-weight: bold;
+      }
+    }
+
+    #registracia {
+      display: none;
+    }
+
+  }
+}

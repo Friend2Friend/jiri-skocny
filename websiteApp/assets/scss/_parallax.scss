@@ -1,0 +1,53 @@
+main {
+  background-color: $color;
+}
+
+#parallax {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: $color-bg;
+
+  .heading-parallax {
+    margin-top: -900px;
+    font-size: 60px;
+    z-index: 100;
+
+    @media(max-width:425px){
+      font-size: 40px;
+    }
+  }
+
+  .particles {
+    @include absolutePosition;
+    position: absolute;
+  }
+
+  .small-particles {
+    opacity: 0;
+    background: {
+      image: url('../images/icons/particles.svg');
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+
+    @media(max-width: 425px){
+      background-position: right center;
+    }
+  }
+
+  .tiny-particles {
+    opacity: 0;
+    background: {
+      image: url('../images/icons/particles-small-1.svg');
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+  }
+}

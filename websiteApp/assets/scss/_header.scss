@@ -1,0 +1,185 @@
+header {
+  position: relative;
+  background-color: $color-dark;
+  color: $color;
+}
+
+#navigation {
+  height: em(70);
+
+  .logo {
+    float: left;
+    width: em(150);
+    height: em(70);
+    line-height: em(70);
+
+    span {
+      color: $color-bg;
+    }
+  }
+}
+
+.navigation-header {
+  float: right;
+  width: em(450);
+  height: 100%;
+
+  nav {
+    height: 100%;
+  }
+
+  ul {
+    height: 100%;
+    @include clearfix;
+  }
+
+  .list-item {
+    position: relative;
+    height: 100%;
+    float: right;
+    line-height: 70px;
+    margin-right: em(15);
+    font-weight: bold;
+    font-size: 18px;
+
+    a {
+      display: block;
+    }
+
+    &:first-of-type{
+      margin: 0;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      right: 0;
+      height: 3px;
+      width: 0;
+      background-color: $color;
+      @include transition;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  @media(max-width: 768px){
+    display: none;
+  }
+}
+
+// bars
+
+#bars {
+  position: absolute;
+  display: none;
+  top: 25px;
+  right: 20px;
+  width: 30px;
+  height: 20px;
+
+  span {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $color;
+    @include transition;
+
+    &:nth-of-type(2){top: 7px; width: 75%;}
+    &:nth-of-type(3){top: 14px;}
+  }
+
+  &:hover span {
+    width: 100%;
+  }
+
+  @media(max-width: 768px){
+    display: block;
+  }
+}
+
+// sidebar
+
+.overlay-sidebar {
+  display: none;
+  opacity: 0;
+  z-index: 1000 !important;
+
+  @include overlay;
+  @include absolutePosition;
+}
+
+#sidebar {
+  margin-left: -320px;
+  width: 320px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: $color;
+  color: $color-dark;
+
+  .list-item {
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: em(10);
+
+    &:hover {
+      color: $color-bg;
+    }
+  }
+
+  #close-btn-sidenav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+
+    span {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $color-dark;
+
+      &:nth-of-type(1){transform: rotate(45deg);}
+      &:nth-of-type(2){transform: rotate(-45deg);}
+    }
+
+    &:hover span {
+      background-color: $color-bg;
+    }
+  }
+}
+
+// animation classes
+
+.fadeIn {
+  display: block;
+  animation: .5s animationOverlay forwards;
+}
+
+.moveRight {
+  animation: .5s animationSidebar forwards;
+}
+
+@keyframes animationOverlay {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animationSidebar {
+  to {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,56 @@
+@import 'typography';
+@import 'colors';
+@import 'mixins';
+@import 'variables';
+@import 'animations';
+@import 'header';
+@import 'parallax';
+@import 'home';
+@import 'contact';
+@import 'footer';
+
+* {
+  font-family: $font;
+}
+
+body {
+  font-family: $font;
+  background-color: $color-bg;
+}
+
+.sign-in-wrapper {
+  padding: 25vh 0;
+}
+
+.sign-in-modal {
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+  background-color: $color-bg;
+  padding: em(25);
+  @include rounded(6);
+
+  @media(max-width: 768px){
+    max-width: 80%;
+  }
+
+  p {
+    margin-bottom: 15px;
+
+    a {
+      font-weight: bold;
+    }
+  }
+
+  #prihlasenie {
+    display: none;
+  }
+
+}
+
+.red-alert {
+  display: block;
+  color: $color;
+  font-weight: bold;
+  padding-bottom: 15px;
+}

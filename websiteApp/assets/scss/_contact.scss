@@ -1,0 +1,42 @@
+.contact-section-wrapper {
+  background: $color-bg;
+}
+
+
+.modal-send-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 20vh 0;
+
+  #form_sendMessage {
+    width: 600px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px $color-dark;
+    background: $color;
+    @include rounded(6);
+
+    .input-fields {
+      input, textarea {
+        border: none;
+        border-bottom: 2px solid lighten($color-dark, 40%);
+        background: $color;
+        outline: none;
+  
+        &:focus {
+          border-bottom-color: $color-dark;
+        }
+      }
+    }
+
+    @media(max-width: 768px){
+      width: 100%;
+    }
+  }
+
+  h2 {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,30 @@
+footer {
+  background: $color-dark;
+  color: $color;
+  padding: em(20);
+}
+
+.social {
+
+  text-align: center;
+
+  ul {
+    margin: 20px;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: em(5);
+    font-size: 40px;
+    @include transition;
+
+    &:hover {
+      color: darken($color, 20%);
+    }
+  }
+
+  p {
+    font-weight: bold;
+    line-height: 22px;
+  }
+}
